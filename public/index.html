@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Async Audio</title>
+  </head>
+  <body>
+    <div id="Search"></div>
+    <div id="Player"></div>
+    <div id="Info"></div>
+    <div id="Comments"></div>
+    <script src="/lib/react.development.js"></script>
+    <script src="/lib/react-dom.development.js"></script>
+    <script src="http://localhost:3001/app.js"></script>
+    <script src="http://localhost:3002/app.js"></script>
+    <script src="http://localhost:3003/app.js"></script>
+    <script src="http://localhost:3004/app.js"></script>
+    <script>
+      ReactDOM.render(
+        React.createElement(Search),
+        document.getElementById("Search")
+      );
+      ReactDOM.render(
+        React.createElement(Player),
+        document.getElementById("Player")
+      );
+      ReactDOM.render(
+        React.createElement(Info),
+        document.getElementById("Info")
+      );
+      ReactDOM.render(
+        React.createElement(Comments),
+        document.getElementById("Comments")
+      );
+    </script>
+  </body>
+</html>
