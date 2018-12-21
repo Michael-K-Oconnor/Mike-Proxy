@@ -1,5 +1,5 @@
 {
-  "name": "Mikes-Propxy-Server",
+  "name": "mikes-proxy-server",
   "version": "1.0.0",
   "description": "Proxy server for Aysnc Audio app",
   "repository": "https://github.com/Michael-K-Oconnor/Mike-Proxy",
@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.2",
     "morgan": "^1.9.0",
