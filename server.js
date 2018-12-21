@@ -31,9 +31,8 @@ app.get("/comments", (req, res) => {
 });
 
 app.post("/comments", (req, res) => {
-  let options = req.body;
   axios
-    .post("http://localhost:3001/comments", options)
+    .post("http://localhost:3001/comments", req.body)
     .then(result => {
       res.status(200);
       res.json(result.data);
@@ -83,9 +82,8 @@ app.get("/pledges", (req, res) => {
 });
 
 app.post("/pledges", (req, res) => {
-  let options = req.body;
   axios
-    .post("http://localhost:3003/pledges", options)
+    .post("http://localhost:3003/pledges", req.body)
     .then(result => {
       res.status(200);
       res.json(result.data);
