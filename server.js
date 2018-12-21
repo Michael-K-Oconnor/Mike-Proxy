@@ -97,12 +97,12 @@ app.post("/pledges", (req, res) => {
 });
 
 ////////////////////////////////////////////////
-//////////////// Project Routes ////////////////
+//////////////// Related Routes ////////////////
 ////////////////////////////////////////////////
 
-app.get("/relatedProjects", (req, res) => {
+app.get("/related", (req, res) => {
   axios
-    .get("http://localhost:3004/relatedProjects", {
+    .get("http://localhost:3004/related", {
       params: req.query
     })
     .then(result => {
