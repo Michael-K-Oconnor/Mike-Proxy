@@ -7,13 +7,13 @@ class App extends React.Component {
     this.changeProject = this.changeProject.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.state = {
-      id: Math.floor(Math.random() * 100)
+      id: Math.floor(Math.random() * 99 + 1)
     };
   }
 
   changeProject(e) {
     this.setState({
-      id: Math.floor(Math.random() * 100)
+      id: Math.floor(Math.random() * 99 + 1)
     });
   }
 

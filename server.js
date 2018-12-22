@@ -8,6 +8,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(morgan("dev"));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -66,11 +67,9 @@ app.get("/projects", (req, res) => {
 //////////////// Pleadge Routes ////////////////
 ////////////////////////////////////////////////
 
-app.get("/pledges", (req, res) => {
+app.get("/pledges/:id", (req, res) => {
   axios
-    .get("http://localhost:3003/pledges", {
-      params: req.query
-    })
+    .get("http://localhost:3003/pledges/" + req.params.id)
     .then(result => {
       res.status(200);
       res.json(result.data);
