@@ -5,7 +5,7 @@
   "repository": "https://github.com/Michael-K-Oconnor/Mike-Proxy",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./server.js",
+    "start": "nodemon ./server/server.js",
     "webpack": "webpack -d -w"
   },
   "keywords": [],
@@ -20,6 +20,7 @@
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.3",
     "express": "^4.16.2",
+    "jest": "^22.3.0",
     "morgan": "^1.9.0",
     "path": "^0.12.7",
     "pg": "^7.7.1",
@@ -28,6 +29,7 @@
     "webpack": "^3.11.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.18.9",
+    "supertest": "^3.3.0"
   }
 }
