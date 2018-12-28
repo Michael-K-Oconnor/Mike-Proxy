@@ -25,11 +25,9 @@ const [commentsRoute, projectsRoute, pledgesRoute, relatedRoute] = [
 //////////////// Comments Routes ////////////////
 ////////////////////////////////////////////////
 
-app.get("/comments", (req, res) => {
+app.get("/comments/:id", (req, res) => {
   axios
-    .get(commentsRoute + "/comments", {
-      params: req.query
-    })
+    .get(commentsRoute + "/comments/" + req.params.id)
     .then(result => {
       res.status(200);
       res.json(result.data);
@@ -57,11 +55,9 @@ app.post("/comments", (req, res) => {
 //////////////// Project Routes ////////////////
 ////////////////////////////////////////////////
 
-app.get("/projects", (req, res) => {
+app.get("/projects/:id", (req, res) => {
   axios
-    .get(projectsRoute + "/projects", {
-      params: req.query
-    })
+    .get(projectsRoute + "/projects" + req.params.id)
     .then(result => {
       res.status(200);
       res.json(result.data);
@@ -77,6 +73,7 @@ app.get("/projects", (req, res) => {
 ////////////////////////////////////////////////
 
 app.get("/pledges/:id", (req, res) => {
+  console.log(pledgesRoute);
   axios
     .get(pledgesRoute + "/pledges/" + req.params.id)
     .then(result => {
@@ -89,9 +86,9 @@ app.get("/pledges/:id", (req, res) => {
     });
 });
 
-app.post(pledgesRoute + "/pledges", (req, res) => {
+app.post("/pledges", (req, res) => {
   axios
-    .post("/pledges", req.body)
+    .post(pledgesRoute + "/pledges", req.body)
     .then(result => {
       res.status(200);
       res.json(result.data);
@@ -106,11 +103,9 @@ app.post(pledgesRoute + "/pledges", (req, res) => {
 //////////////// Related Routes ////////////////
 ////////////////////////////////////////////////
 
-app.get("/related", (req, res) => {
+app.get("/related/:id", (req, res) => {
   axios
-    .get(relatedRoute + "/related", {
-      params: req.query
-    })
+    .get(relatedRoute + "/related/" + req.params.id)
     .then(result => {
       res.status(200);
       res.json(result.data);
