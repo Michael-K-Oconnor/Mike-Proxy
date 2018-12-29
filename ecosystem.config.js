@@ -7,7 +7,7 @@ module.exports = {
       script: "./server/server.js",
       watch: ["server", "public"],
       env: {
-        NODE_ENV: "development"
+        NODE_ENV: "test"
       },
       env_development: {
         NODE_ENV: "development",
@@ -19,7 +19,7 @@ module.exports = {
         PLEDGES_PORT: process.env.DEV_PLEDGES_PORT,
         RELATED_HOST: process.env.DEV_RELATED_HOST,
         RELATED_PORT: process.env.DEV_RELATED_PORT,
-        PORT: process.env.DEV_PORT
+        PORT: process.env.DEV_PROXY_PORT
       },
       env_production: {
         NODE_ENV: "production",
@@ -31,7 +31,7 @@ module.exports = {
         PLEDGES_PORT: process.env.PROD_PLEDGES_PORT,
         RELATED_HOST: process.env.PROD_RELATED_HOST,
         RELATED_PORT: process.env.PROD_RELATED_PORT,
-        PORT: process.env.PROD_PORT
+        PORT: process.env.PROD_PROXY_PORT
       }
     }
   ],

@@ -15,10 +15,10 @@ app.use(express.static(path.join(__dirname, "../public")));
 
 /////  CONFIG ROUTES FROM ENV  ///////////////
 const [commentsRoute, projectsRoute, pledgesRoute, relatedRoute] = [
-  process.env.COMMENTS_HOST + ":" + process.env.COMMENTS_PORT,
-  process.env.PROJECTS_HOST + ":" + process.env.PROJECTS_PORT,
-  process.env.PLEDGES_HOST + ":" + process.env.PLEDGES_PORT,
-  process.env.RELATED_HOST + ":" + process.env.RELATED_PORT
+  "http://" + process.env.COMMENTS_HOST + ":" + process.env.COMMENTS_PORT,
+  "http://" + process.env.PROJECTS_HOST + ":" + process.env.PROJECTS_PORT,
+  "http://" + process.env.PLEDGES_HOST + ":" + process.env.PLEDGES_PORT,
+  "http://" + process.env.RELATED_HOST + ":" + process.env.RELATED_PORT
 ];
 
 //////  SENDS URLs TO CLIENT HTML ON INITAILIZATION ///////
