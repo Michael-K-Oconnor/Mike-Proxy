@@ -26,7 +26,7 @@ class App extends React.Component {
           this.setState({
             hasLoaded: true
           }),
-        100
+        500
       );
     });
   }
