@@ -9,27 +9,27 @@ class App extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.state = {
       id: Math.floor(Math.random() * 99 + 1),
-      hasLoaded: false
+      hasLoaded: true
     };
   }
 
-  componentDidMount() {
-    axios(window.location.href + "routes").then(response => {
-      let routes = JSON.parse(response.data);
-      console.log(routes);
-      const script = document.createElement("script");
-      script.src = routes.pledgesRoute + "/app.js";
-      script.async = true;
-      document.body.appendChild(script);
-      setTimeout(
-        () =>
-          this.setState({
-            hasLoaded: true
-          }),
-        500
-      );
-    });
-  }
+  // componentDidMount() {
+  //   axios(window.location.href + "routes").then(response => {
+  //     let routes = JSON.parse(response.data);
+  //     console.log(routes);
+  //     const script = document.createElement("script");
+  //     script.src = routes.pledgesRoute + "/app.js";
+  //     script.async = true;
+  //     document.body.appendChild(script);
+  //     setTimeout(
+  //       () =>
+  //         this.setState({
+  //           hasLoaded: true
+  //         }),
+  //       500
+  //     );
+  //   });
+  // }
 
   changeProject(e) {
     this.setState({
