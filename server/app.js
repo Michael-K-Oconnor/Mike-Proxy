@@ -21,6 +21,12 @@ const [commentsRoute, projectsRoute, pledgesRoute, relatedRoute] = [
   process.env.RELATED_HOST + ":" + process.env.RELATED_PORT
 ];
 
+//////  SENDS URLs TO CLIENT HTML ON INITAILIZATION ///////
+app.get("/routes", (req, res) => {
+  const routes = { commentsRoute, projectsRoute, pledgesRoute, relatedRoute };
+  res.json(JSON.stringify(routes));
+});
+
 ////////////////////////////////////////////////
 //////////////// Comments Routes ////////////////
 ////////////////////////////////////////////////
@@ -33,7 +39,10 @@ app.get("/comments/:id", (req, res) => {
       res.json(result.data);
     })
     .catch(err => {
-      console.log("There was an error with GET request to comments server");
+      console.log(
+        "There was an error with GET request to comments server: ",
+        err
+      );
       res.sendStatus(500);
     });
 });
@@ -46,7 +55,10 @@ app.post("/comments", (req, res) => {
       res.json(result.data);
     })
     .catch(err => {
-      console.log("There was an error with POST request to comments server");
+      console.log(
+        "There was an error with POST request to comments server: ",
+        err
+      );
       res.sendStatus(500);
     });
 });
@@ -63,7 +75,10 @@ app.get("/projects/:id", (req, res) => {
       res.json(result.data);
     })
     .catch(err => {
-      console.log("There was an error with GET request to projects server");
+      console.log(
+        "There was an error with GET request to projects server: ",
+        err
+      );
       res.sendStatus(500);
     });
 });
@@ -73,7 +88,6 @@ app.get("/projects/:id", (req, res) => {
 ////////////////////////////////////////////////
 
 app.get("/pledges/:id", (req, res) => {
-  console.log(pledgesRoute);
   axios
     .get(pledgesRoute + "/pledges/" + req.params.id)
     .then(result => {
@@ -81,7 +95,10 @@ app.get("/pledges/:id", (req, res) => {
       res.json(result.data);
     })
     .catch(err => {
-      console.log("There was an error with GET request to pledges server");
+      console.log(
+        "There was an error with GET request to pledges server: ",
+        err
+      );
       res.sendStatus(500);
     });
 });
@@ -94,7 +111,10 @@ app.post("/pledges", (req, res) => {
       res.json(result.data);
     })
     .catch(err => {
-      console.log("There was an error with POST request to pledges server");
+      console.log(
+        "There was an error with POST request to pledges server: ",
+        err
+      );
       res.sendStatus(500);
     });
 });
