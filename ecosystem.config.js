@@ -7,6 +7,9 @@ module.exports = {
       script: "./server/server.js",
       watch: ["server", "public"],
       env: {
+        NODE_ENV: "development"
+      },
+      env_development: {
         NODE_ENV: "development",
         COMMENTS_HOST: process.env.DEV_COMMENTS_HOST,
         COMMENTS_PORT: process.env.DEV_COMMENTS_PORT,
