@@ -1,3 +1,4 @@
+const config = require("./config.js");
 const app = require("./app.js");
 const port = process.env.PORT || 3000;
 
