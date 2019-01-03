@@ -52,7 +52,7 @@ app.post("/comments", (req, res) => {
   axios
     .post(commentsRoute + "/comments", req.body)
     .then(result => {
-      res.status(200);
+      res.status(201);
       res.json(result.data);
     })
     .catch(err => {
@@ -70,7 +70,7 @@ app.post("/comments", (req, res) => {
 
 app.get("/projects/:id", (req, res) => {
   axios
-    .get(projectsRoute + "/projects" + req.params.id)
+    .get(projectsRoute + "/projects/" + req.params.id)
     .then(result => {
       res.status(200);
       res.json(result.data);
@@ -108,7 +108,7 @@ app.post("/pledges", (req, res) => {
   axios
     .post(pledgesRoute + "/pledges", req.body)
     .then(result => {
-      res.status(200);
+      res.status(201);
       res.json(result.data);
     })
     .catch(err => {

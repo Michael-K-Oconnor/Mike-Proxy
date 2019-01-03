@@ -4,6 +4,9 @@
   "description": "Proxy server for Aysnc Audio app",
   "repository": "https://github.com/Michael-K-Oconnor/Mike-Proxy",
   "main": "index.js",
+  "jest": {
+    "testURL": "http://localhost"
+  },
   "scripts": {
     "test": "jest",
     "build": "webpack",
@@ -37,6 +40,7 @@
     "webpack": "^3.11.0"
   },
   "devDependencies": {
+    "axios-mock-adapter": "^1.16.0",
     "nodemon": "^1.18.9",
     "pm2": "^3.2.4",
     "supertest": "^3.3.0",
