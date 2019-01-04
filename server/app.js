@@ -32,9 +32,10 @@ app.get("/routes", (req, res) => {
 //////////////// Comments Routes ////////////////
 ////////////////////////////////////////////////
 
-app.get("/comments/:id", (req, res) => {
+app.get("/comments/:ID", (req, res) => {
+  console.log(req.url);
   axios
-    .get(commentsRoute + "/comments/" + req.params.id)
+    .get(commentsRoute + req.url)
     .then(result => {
       res.status(200);
       res.json(result.data);
@@ -70,7 +71,7 @@ app.post("/comments", (req, res) => {
 
 app.get("/projects/:id", (req, res) => {
   axios
-    .get(projectsRoute + "/projects/" + req.params.id)
+    .get(projectsRoute + req.url)
     .then(result => {
       res.status(200);
       res.json(result.data);
@@ -90,7 +91,7 @@ app.get("/projects/:id", (req, res) => {
 
 app.get("/pledges/:id", (req, res) => {
   axios
-    .get(pledgesRoute + "/pledges/" + req.params.id)
+    .get(pledgesRoute + req.url)
     .then(result => {
       res.status(200);
       res.json(result.data);
@@ -141,7 +142,7 @@ app.get("/related", (req, res) => {
 
 app.get("/related/:id", (req, res) => {
   axios
-    .get(relatedRoute + "/related/" + req.params.id)
+    .get(relatedRoute + req.url)
     .then(result => {
       res.status(200);
       res.json(result.data);
