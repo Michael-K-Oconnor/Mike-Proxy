@@ -7,7 +7,7 @@ class App extends React.Component {
     this.changeProject = this.changeProject.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.state = {
-      id: Math.floor(Math.random() * 99 + 1)
+      id: Math.ceil(Math.random() * 107)
     };
   }
 
@@ -17,9 +17,9 @@ class App extends React.Component {
     });
   }
 
-  handleClick(e) {
+  handleClick(e, newId) {
     this.setState({
-      id: e.target.id
+      id: newId
     });
   }
 
@@ -27,9 +27,9 @@ class App extends React.Component {
     return (
       <div>
         <Pledge id={this.state.id} />
-        {/* <Project id={this.state.id} /> */}
+        <Project id={this.state.id} />
         {/* <Comments id={this.state.id} /> */}
-        <Related id={this.state.id} handleClick={this.handleClick} />
+        <Related id={this.state.id} onClick={this.handleClick} />
         <button onClick={this.changeProject}>ChangeProject</button>
       </div>
     );
