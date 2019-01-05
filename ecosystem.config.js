@@ -28,7 +28,7 @@ module.exports = {
       repo: "git@github.com:Michael-K-Oconnor/Mike-Proxy.git",
       path: "/home/ubuntu/Mike-Proxy",
       "post-deploy":
-        "npm install && npm run build && pm2 startOrRestart ecosystem.config.js --env production"
+        "npm install && npm run build && pm2 startOrRestart ecosystem.config.js --env production --update-env"
     }
   }
 };
