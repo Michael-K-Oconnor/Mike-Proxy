@@ -22,12 +22,6 @@ const [commentsRoute, projectsRoute, pledgesRoute, relatedRoute] = [
   "http://" + config.RELATED_HOST + ":" + config.RELATED_PORT
 ];
 
-//////  SENDS URLs TO CLIENT HTML ON INITAILIZATION ///////
-app.get("/routes", (req, res) => {
-  const routes = { commentsRoute, projectsRoute, pledgesRoute, relatedRoute };
-  res.json(JSON.stringify(routes));
-});
-
 ////////////////////////////////////////////////
 //////////////// Comments Routes ////////////////
 ////////////////////////////////////////////////

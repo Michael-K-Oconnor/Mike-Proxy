@@ -5,14 +5,18 @@ module.exports = {
   context: __dirname + "/client",
   entry: "./app.jsx",
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: "babel-loader",
         query: {
           presets: ["react", "es2015", "env"]
         }
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
       }
     ]
   },

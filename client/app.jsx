@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./styles/app.css";
 
 class App extends React.Component {
   constructor(props) {
@@ -25,11 +26,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <Pledge id={this.state.id} />
-        <Project id={this.state.id} />
-        <Comments id={this.state.id} />
-        <Related id={this.state.id} onClick={this.handleClick} />
+      <div className="container">
+        <Project className="Project" id={this.state.id} />
+        <Pledge className="Pledge" id={this.state.id} />
+        <Comments className="Comments" id={this.state.id} />
+        <Related
+          className="Related"
+          id={this.state.id}
+          onClick={this.handleClick}
+        />
         <button onClick={this.changeProject}>ChangeProject</button>
       </div>
     );
