@@ -22,6 +22,12 @@ const [commentsRoute, projectsRoute, pledgesRoute, relatedRoute] = [
   "http://" + config.RELATED_HOST + ":" + config.RELATED_PORT
 ];
 
+
+app.get('/routes', (req, res) => {
+  res.json([commentsRoute, projectsRoute, pledgesRoute, relatedRoute])
+})
+
+
 ////////////////////////////////////////////////
 //////////////// Comments Routes ////////////////
 ////////////////////////////////////////////////
