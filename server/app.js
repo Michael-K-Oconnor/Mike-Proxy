@@ -26,8 +26,8 @@ const [commentsRoute, projectsRoute, pledgesRoute, relatedRoute] = [
 //////////////// Comments Routes ////////////////
 ////////////////////////////////////////////////
 
-app.get("/comments/:ID", (req, res) => {
-  console.log(req.url);
+app.get("/comments", (req, res) => {
+  console.log(commentsRoute + req.url);
   axios
     .get(commentsRoute + req.url)
     .then(result => {
