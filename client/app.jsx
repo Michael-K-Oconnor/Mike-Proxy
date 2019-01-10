@@ -27,7 +27,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <Project className="Project" id={this.state.id} />
+        {window.Project && <Project className="Project" id={this.state.id} />}
         <Pledge className="Pledge" id={this.state.id} />
         <Comments className="Comments" id={this.state.id} />
         <Related
@@ -35,7 +35,6 @@ class App extends React.Component {
           id={this.state.id}
           onClick={this.handleClick}
         />
-        <button onClick={this.changeProject}>ChangeProject</button>
       </div>
     );
   }
