@@ -27,14 +27,18 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <Project className="Project" id={this.state.id} />
-        <Pledge className="Pledge" id={this.state.id} />
-        <Comments className="Comments" id={this.state.id} />
-        <Related
-          className="Related"
-          id={this.state.id}
-          onClick={this.handleClick}
-        />
+        <div className="Project">
+          <Project id={this.state.id} />
+        </div>
+        <div className="Pledge">
+          <Pledge id={this.state.id} />
+        </div>
+        <div className="Comments">
+          <Comments id={this.state.id} />
+        </div>
+        <div className="Related">
+          <Related id={this.state.id} onClick={this.handleClick} />
+        </div>
       </div>
     );
   }
