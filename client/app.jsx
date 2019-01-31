@@ -42,7 +42,7 @@ class App extends React.Component {
             {/* <Comments id={this.state.id} /> */}
           </div>
           <div className="Related">
-            <Related id={this.state.id} onClick={this.handleClick} />
+            {/* <Related id={this.state.id} onClick={this.handleClick} /> */}
           </div>
         </div>
       </div>
