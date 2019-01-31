@@ -32,15 +32,17 @@ class App extends React.Component {
           <div className="navBar">
             <Nav />
           </div>
-          <div className="Project"><Project id={this.state.id} /></div>
+          <div className="Project">
+            <Project id={this.state.id} />
+          </div>
           <div className="Pledge">
             <Pledge id={this.state.id} />
           </div>
           <div className="Comments">
-            <Comments id={this.state.id} />
+            {/* <Comments id={this.state.id} /> */}
           </div>
           <div className="Related">
-            <Related id={this.state.id} onClick={this.handleClick} />
+            {/* <Related id={this.state.id} onClick={this.handleClick} /> */}
           </div>
         </div>
       </div>
