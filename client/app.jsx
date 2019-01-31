@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./styles/app.css";
+import Nav from "./nav.jsx";
 
 class App extends React.Component {
   constructor(props) {
@@ -26,18 +27,21 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="Project">
-          <Project id={this.state.id} />
-        </div>
-        <div className="Pledge">
-          <Pledge id={this.state.id} />
-        </div>
-        <div className="Comments">
-          <Comments id={this.state.id} />
-        </div>
-        <div className="Related">
-          <Related id={this.state.id} onClick={this.handleClick} />
+      <div>
+        <div className="container">
+          <div className="navBar">
+            <Nav />
+          </div>
+          <div className="Project">{/* <Project id={this.state.id} /> */}</div>
+          <div className="Pledge">
+            <Pledge id={this.state.id} />
+          </div>
+          <div className="Comments">
+            {/* <Comments id={this.state.id} /> */}
+          </div>
+          <div className="Related">
+            {/* <Related id={this.state.id} onClick={this.handleClick} /> */}
+          </div>
         </div>
       </div>
     );
