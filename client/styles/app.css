@@ -46,7 +46,5 @@ body {
 
 #nav-bar-sections {
   display: flex;
-  /* grid-template-columns: 100px 100px 100px 100px;
-  grid-gap: 10px; */
   float: right;
 }
